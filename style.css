@@ -796,7 +796,36 @@ body {
 }
 
 /* =============================================
-   BOUQUET
+   FLOWER GIF (below letter)
+   ============================================= */
+.flower-gif-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  animation: riseIn 0.7s ease 0.15s both;
+}
+
+.flower-gif {
+  width: min(380px, 92vw);
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+}
+
+.flower-gif-caption {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink-3);
+  letter-spacing: 0.06em;
+}
+
+/* =============================================
+   BOUQUET (kept for reference, unused)
    ============================================= */
 .bouquet-wrapper {
   display: flex;

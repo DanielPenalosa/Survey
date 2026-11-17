@@ -360,17 +360,14 @@ function buildLetterAndBouquet(wrapper, envelopeEl) {
       </div>`;
     wrapper.appendChild(cardOuter);
 
-    // ── Bouquet ───────────────────────────────
-    const bouquetWrapper = document.createElement('div');
-    bouquetWrapper.className = 'bouquet-wrapper';
-    bouquetWrapper.innerHTML = buildBouquetSVG();
-
-    const caption = document.createElement('p');
-    caption.className = 'bouquet-caption';
-    caption.textContent = 'for you 💜';
-    bouquetWrapper.appendChild(caption);
-
-    wrapper.appendChild(bouquetWrapper);
+    // ── Flower gif ────────────────────────────
+    const flowerWrap = document.createElement('div');
+    flowerWrap.className = 'flower-gif-wrap';
+    flowerWrap.innerHTML = `
+      <img src="image3.gif" alt="flowers for you" class="flower-gif"/>
+      <p class="flower-gif-caption">for you 💜</p>
+    `;
+    wrapper.appendChild(flowerWrap);
 
     setTimeout(startPetals, 800);
   }, 500);
