@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Just a Little Something 💜</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Dancing+Script:wght@400;600;700&family=Lora:ital,wght@1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="petals-container"></div>
+  <div id="confetti-container"></div>
+
+  <!-- ===================================================
+       SURVEY SECTION
+  ==================================================== -->
+  <div id="survey-section" class="section active">
+
+    <div class="progress-container" id="progress-container">
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <span class="progress-label" id="progress-label">1 / 6</span>
+    </div>
+
+    <div class="survey-wrapper">
+
+      <!-- Intro -->
+      <div class="survey-screen active" id="screen-intro">
+        <div class="survey-card intro-card">
+          <div class="intro-dot"></div>
+          <h1 class="intro-title">Just a Little Something</h1>
+          <p class="intro-subtitle">Can I ask you a few little questions?<br>It won't take long.</p>
+          <button class="btn-primary" id="start-btn">Let's Begin</button>
+        </div>
+      </div>
+
+      <!-- Q1: Day -->
+      <div class="survey-screen" id="screen-q1">
+        <div class="survey-card">
+          <div class="question-number">Question 1 of 6</div>
+          <h2 class="question-text">How's your day going so far?</h2>
+          <div class="options-grid">
+            <button class="option-btn" data-q="1" data-val="a">Pretty good!</button>
+            <button class="option-btn" data-q="1" data-val="b">It's been okay.</button>
+            <button class="option-btn" data-q="1" data-val="c">A little tiring.</button>
+            <button class="option-btn" data-q="1" data-val="d">Could be better.</button>
+          </div>
+          <div class="nav-buttons">
+            <button class="btn-back" onclick="goBack(1)">Back</button>
+            <button class="btn-next" id="next-q1" onclick="goNext(1)" disabled>Next</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2: Smile -->
+      <div class="survey-screen" id="screen-q2">
+        <div class="survey-card">
+          <div class="question-number">Question 2 of 6</div>
+          <h2 class="question-text">What's something that makes you smile?</h2>
+          <div class="options-grid">
+            <button class="option-btn" data-q="2" data-val="a">Little things</button>
+            <button class="option-btn" data-q="2" data-val="b">Good conversations</button>
+            <button class="option-btn" data-q="2" data-val="c">Music</button>
+            <button class="option-btn" data-q="2" data-val="d">Someone special</button>
+          </div>
+          <div class="nav-buttons">
+            <button class="btn-back" onclick="goBack(2)">Back</button>
+            <button class="btn-next" id="next-q2" onclick="goNext(2)" disabled>Next</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3: Learn from mistakes -->
+      <div class="survey-screen" id="screen-q3">
+        <div class="survey-card">
+          <div class="question-number">Question 3 of 6</div>
+          <h2 class="question-text">Do you believe that people can learn from their mistakes?</h2>
+          <div class="options-grid options-grid-3">
+            <button class="option-btn" data-q="3" data-val="a">Definitely.</button>
+            <button class="option-btn" data-q="3" data-val="b">Yes, if they're willing to.</button>
+            <button class="option-btn" data-q="3" data-val="c">Sometimes.</button>
+          </div>
+          <div class="nav-buttons">
+            <button class="btn-back" onclick="goBack(3)">Back</button>
+            <button class="btn-next" id="next-q3" onclick="goNext(3)" disabled>Next</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q4: Mood / Mad -->
+      <div class="survey-screen" id="screen-q4">
+        <div class="survey-card">
+          <div class="question-number">Question 4 of 6</div>
+          <h2 class="question-text">Be honest — how are you feeling right now?</h2>
+          <div class="options-grid">
+            <button class="option-btn" data-q="4" data-val="a">I'm good 🙂</button>
+            <button class="option-btn" data-q="4" data-val="b">A little off 😶</button>
+            <button class="option-btn" data-q="4" data-val="c">Kind of upset 😕</button>
+            <button class="option-btn" data-q="4" data-val="d">Still mad 😤</button>
+          </div>
+          <div class="nav-buttons">
+            <button class="btn-back" onclick="goBack(4)">Back</button>
+            <button class="btn-next" id="next-q4" onclick="goNext(4)" disabled>Next</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q5: Honest conversations -->
+      <div class="survey-screen" id="screen-q5">
+        <div class="survey-card">
+          <div class="question-number">Question 5 of 6</div>
+          <h2 class="question-text">What's more important to you?</h2>
+          <div class="options-grid options-grid-3">
+            <button class="option-btn" data-q="5" data-val="a">Words</button>
+            <button class="option-btn" data-q="5" data-val="b">Actions</button>
+            <button class="option-btn" data-q="5" data-val="c">Both matter equally.</button>
+          </div>
+          <div class="nav-buttons">
+            <button class="btn-back" onclick="goBack(5)">Back</button>
+            <button class="btn-next" id="next-q5" onclick="goNext(5)" disabled>Next</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q6: Are we okay? YES / NO -->
+      <div class="survey-screen" id="screen-q6">
+        <div class="survey-card">
+          <div class="question-number">Question 6 of 6</div>
+          <h2 class="question-text">One last question —<br>Are We Okay my Baby Molly? hehehe</h2>
+          <div class="yn-grid">
+            <button class="yn-btn yn-yes" id="yn-yes" onclick="handleYes()">Yes 💜</button>
+            <button class="yn-btn yn-no"  id="yn-no"  onclick="handleNo()">No</button>
+          </div>
+          <p class="yn-hint" id="yn-hint">Try clicking No... if you dare 🤭</p>
+          <div class="nav-buttons" style="margin-top: 16px;">
+            <button class="btn-back" onclick="goBack(6)">Back</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================================================
+       NO POPUPS  (3 attempts)
+  ==================================================== -->
+
+  <!-- Attempt 1 -->
+  <div class="popup-overlay" id="popup-no-1">
+    <div class="popup-card popup-no-card">
+      <div class="popup-img-wrap">
+        <img src="image1.gif" alt="" class="popup-img"/>
+      </div>
+      <p class="popup-no-title">please baby 🥺</p>
+      <p class="popup-countdown" id="countdown-1"></p>
+    </div>
+  </div>
+
+  <!-- Attempt 2 -->
+  <div class="popup-overlay" id="popup-no-2">
+    <div class="popup-card popup-no-card">
+      <div class="popup-img-wrap">
+        <img src="image2.gif" alt="" class="popup-img"/>
+      </div>
+      <p class="popup-no-title">still no? 😢</p>
+      <p class="popup-countdown" id="countdown-2"></p>
+    </div>
+  </div>
+
+  <!-- Attempt 3 — No button gone after this -->
+  <div class="popup-overlay" id="popup-no-3">
+    <div class="popup-card popup-no-card">
+      <div class="popup-img-wrap">
+        <img src="image.gif" alt="" class="popup-img"/>
+      </div>
+      <p class="popup-no-title">we should be okay already 🥺</p>
+      <p class="popup-countdown" id="countdown-3"></p>
+    </div>
+  </div>
+
+  <!-- ===================================================
+       YES POPUP  (celebration)
+  ==================================================== -->
+  <div class="popup-overlay" id="popup-yes">
+    <div class="popup-card popup-yes-card">
+      <div class="popup-img-wrap">
+        <img src="image3.gif" alt="" class="popup-img"/>
+      </div>
+      <p class="popup-yes-text">Flower for you</p>
+      <p class="popup-yes-title">Yehey!! We're okay!! 💜</p>
+      <p class="popup-yes-text">I knew it! This made me Happy. Thank you for forgiving me baby hehehe 💜</p>
+      <button class="popup-yes-btn" onclick="closeYesPopup()">let's go 💜</button>
+    </div>
+  </div>
+
+  <!-- ===================================================
+       TRANSITION SECTION
+  ==================================================== -->
+  <div id="transition-section" class="section">
+    <div class="transition-card">
+      <div class="transition-line"></div>
+      <p class="transition-text">Thank you for answering my little questions.</p>
+      <p class="transition-subtext">There's actually something I wanted to share with you...</p>
+      <button class="btn-surprise" id="surprise-btn">See It... ♡</button>
+    </div>
+  </div>
+
+  <!-- ===================================================
+       SURPRISE SECTION
+  ==================================================== -->
+  <div id="surprise-section" class="section">
+    <div class="surprise-wrapper" id="surprise-wrapper">
+
+      <p class="envelope-hint" id="envelope-hint">There's something I've been wanting to tell you...</p>
+
+      <div class="envelope-container" id="envelope-container" onclick="openEnvelope()">
+        <div class="envelope" id="envelope">
+          <div class="envelope-back"></div>
+          <div class="envelope-flap" id="envelope-flap"></div>
+          <div class="envelope-front"></div>
+          <div class="envelope-left"></div>
+          <div class="envelope-right"></div>
+          <div class="envelope-seal" id="envelope-seal">💜</div>
+          <div class="letter-wrapper" id="letter-wrapper"></div>
+        </div>
+        <p class="tap-hint" id="tap-hint">tap to open</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
